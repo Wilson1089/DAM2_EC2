@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -67,7 +68,10 @@ fun Navegacion() {
                 Text("P2")
             }
         })
-    preg1(radios) { radios = it }
+    Box(modifier = Modifier.fillMaxWidth()){
+        preg1(radios) { radios = it }
+    }
+
 }
 
 
