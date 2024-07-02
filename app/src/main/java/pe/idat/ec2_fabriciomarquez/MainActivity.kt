@@ -28,6 +28,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,6 +51,9 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Navegacion() {
+    var radios by rememberSaveable {
+        mutableStateOf("")
+    }
     TopAppBar(title = { Text(text = "EC2_Marquez") },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = Color.Black,
@@ -63,6 +67,7 @@ fun Navegacion() {
                 Text("P2")
             }
         })
+    preg1(radios) { radios = it }
 }
 
 
